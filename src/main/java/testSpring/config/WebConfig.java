@@ -1,4 +1,4 @@
-package config;
+package testSpring.config;
 /*** Конфигурация для spring*/
 
 import org.springframework.context.annotation.Bean;
@@ -10,12 +10,12 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "java")
+@ComponentScan(basePackages = "testSpring")
 public class WebConfig {
     @Bean
     ViewResolver viewResolver() {
         InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-        viewResolver.setPrefix("/pages/");
+        viewResolver.setPrefix("/WEB-INF/pages/");
         viewResolver.setSuffix(".jsp");
         return viewResolver;
     }
