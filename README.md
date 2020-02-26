@@ -7,3 +7,6 @@ Test Spring web-application
 3) <a href="https://github.com/maxsouldrake/Filmography/blob/master/pom.xml">Пример для создания проекта </a>
 4) <a href="https://www.journaldev.com/2593/spring-jdbc-example"> Spring JDBC Example </a>
 5) <a href="http://javastudy.ru/spring-mvc/hello-world-example/">Еще один пример</a>
+
+Spring JDBC
+1) <a href="https://java-master.com/spring-boot-пример-с-postgres-и-jpa/#codesyntax_1">Сайт с примерами</a>
