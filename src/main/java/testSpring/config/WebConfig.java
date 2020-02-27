@@ -7,6 +7,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import testSpring.service.UserService;
+import testSpring.service.UsersServiceImpl;
 
 @Configuration
 @EnableWebMvc
@@ -19,4 +21,9 @@ public class WebConfig {
         viewResolver.setSuffix(".jsp");
         return viewResolver;
     }
+
+//    @Bean
+//    UserService userService(){
+//        return new UsersServiceImpl();
+//    }
 }

@@ -25,6 +25,12 @@
 <!--                <groupId>org.wildfly.plugins</groupId>-->
 <!--                <artifactId>wildfly-maven-plugin</artifactId>-->
 <!--                <version>2.0.2.Final</version>-->
+<!--            </plugin>-->
+
+<!--            <plugin>-->
+<!--                <groupId>org.wildfly.plugins</groupId>-->
+<!--                <artifactId>wildfly-maven-plugin</artifactId>-->
+<!--                <version>2.0.2.Final</version>-->
 <!--&lt;!&ndash;                <configuration>&ndash;&gt;-->
 <!--&lt;!&ndash;                    <hostname>localdost</hostname>&ndash;&gt;-->
 <!--&lt;!&ndash;                    <port>8080</port>&ndash;&gt;-->
@@ -46,11 +52,22 @@
             <version>4.0.1</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>8.0.1</version>
+            <scope>provided</scope>
+        </dependency>
         <!-- Spring JDBC -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
             <version>5.2.3.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>2.2.4.RELEASE</version>
         </dependency>
         <!--библиотека тегов JSP-->
         <dependency>
@@ -76,12 +93,25 @@
             <version>2.2</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-dbcp</artifactId>
+            <version>9.0.10</version>
+        </dependency>
+
        <!-- Spring JDBC Support -->
 <!--        <dependency>-->
 <!--            <groupId>org.springframework</groupId>-->
 <!--            <artifactId>spring-jdbc</artifactId>-->
 <!--            <version>${spring-framework.version}</version>-->
 <!--        </dependency> -->
+
+<!--        ПОТОМ УБРАТЬ-->
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-dbcp</artifactId>
+            <version>9.0.10</version>
+        </dependency>
 
     </dependencies>
     

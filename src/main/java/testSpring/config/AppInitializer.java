@@ -3,6 +3,7 @@ package testSpring.config;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
+
 import javax.servlet.Filter;
 
 /**
@@ -24,7 +25,7 @@ public class AppInitializer extends AbstractAnnotationConfigDispatcherServletIni
         return new String[]{"/"};
     }
 
-    /**Для праильно йкодировки*/
+    /**Для праильной кодировки*/
     @Override
     protected Filter[] getServletFilters() {
         CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();

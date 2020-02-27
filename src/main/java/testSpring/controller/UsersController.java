@@ -1,23 +1,17 @@
 package testSpring.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import testSpring.model.Users;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.servlet.ModelAndView;
 import testSpring.service.UserService;
 import testSpring.service.UsersServiceImpl;
 
 import java.util.List;
 
-@Controller
+@RestController
 public class UsersController {
-    private UserService userService;
 
-    @Autowired
-    public void setFilmService(UserService userService) {
-        this.userService = userService;
-    }
+    private UserService userService = new UsersServiceImpl();
 
     @GetMapping(value = "/")
     public ModelAndView allUsers(){
@@ -56,7 +50,7 @@ public class UsersController {
     public String addUser(@ModelAttribute("user") Users newUser) {
 //        ModelAndView modelAndView = new ModelAndView();
 //        modelAndView.setViewName("redirect:/");
-        userService.save(newUser);
+        userService.addUser(newUser);
         return "redirect:/";
     }
     //endregion
