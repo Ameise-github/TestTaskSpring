@@ -1,6 +1,13 @@
 package testSpring.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="users")
 public class Users {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id_user")
     private Integer idUser;
     private String login;
     private String firstname;
