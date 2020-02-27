@@ -1,26 +1,35 @@
 package testSpring.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="users")
 public class Users {
-    private Integer id_user;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id_user")
+    private Integer idUser;
     private String login;
     private String firstname;
     private String lastname;
     private boolean active;
 
-    public Users(Integer id_user, String login, String firstname, String lastname, boolean active) {
-        this.id_user = id_user;
+    public Users() {}
+
+    public Users(Integer idUser, String login, String firstname, String lastname, boolean active) {
+        this.idUser = idUser;
         this.login = login;
         this.firstname = firstname;
         this.lastname = lastname;
         this.active = active;
     }
 
-    public Integer getId_user() {
-        return id_user;
+    public Integer getIdUser() {
+        return idUser;
     }
 
-    public void setId_user(Integer id_user) {
-        this.id_user = id_user;
+    public void setIdUser(Integer id_user) {
+        this.idUser = id_user;
     }
 
     public String getLogin() {
@@ -58,7 +67,7 @@ public class Users {
     @Override
     public String toString() {
         return "Users{" +
-                "id_user=" + id_user +
+                "id_user=" + idUser +
                 ", login='" + login + '\'' +
                 ", firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
