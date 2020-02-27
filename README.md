@@ -8,6 +8,7 @@ Test Spring web-application
 4) <a href="https://www.journaldev.com/2593/spring-jdbc-example"> Spring JDBC Example </a>
 5) <a href="http://javastudy.ru/spring-mvc/hello-world-example/">Еще один пример</a>
 6) <a href="https://spring-projects.ru/guides/lessons/lesson-2/">Уроки spring</a>
+7) <a href="https://doc.cuba-platform.com/manual-latest-ru/wildfly_war_deployment.html">Развертывание WAR в WildFly</a>
 
 Spring JDBC
 1) <a href="https://java-master.com/spring-boot-пример-с-postgres-и-jpa/#codesyntax_1">Сайт с примерами</a>
