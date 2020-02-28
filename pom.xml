@@ -26,16 +26,6 @@
 <!--                <artifactId>wildfly-maven-plugin</artifactId>-->
 <!--                <version>2.0.2.Final</version>-->
 <!--            </plugin>-->
-
-<!--            <plugin>-->
-<!--                <groupId>org.wildfly.plugins</groupId>-->
-<!--                <artifactId>wildfly-maven-plugin</artifactId>-->
-<!--                <version>2.0.2.Final</version>-->
-<!--&lt;!&ndash;                <configuration>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <hostname>localdost</hostname>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <port>8080</port>&ndash;&gt;-->
-<!--&lt;!&ndash;                </configuration>&ndash;&gt;-->
-<!--            </plugin>-->
         </plugins>
     </build>
 
