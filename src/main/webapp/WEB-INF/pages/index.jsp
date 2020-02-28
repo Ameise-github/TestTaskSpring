@@ -11,9 +11,6 @@
     <title>Index</title>
   </head>
   <body>
-  <p>Ваше приложение работает хорошо!</p>
-  <p>Вот твои кнопихи!</p>
-  <a href="usersList.jsp"> This is List Users</a>
 
   </body>
 </html>

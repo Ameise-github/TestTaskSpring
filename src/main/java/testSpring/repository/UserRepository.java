@@ -1,9 +1,14 @@
 package testSpring.repository;
 
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
 import testSpring.model.Users;
 
-@Repository
-public interface UserRepository extends CrudRepository<Users, Integer> {
+import java.util.List;
+
+
+public interface UserRepository {
+    void addUser(Users user);
+    void delete(Users user);
+    void editUser(Users user);
+    Users getById(int idUser);
+    List<Users> getAllUsers();
 }

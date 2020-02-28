@@ -5,9 +5,9 @@ import testSpring.model.Users;
 import java.util.List;
 
 public interface UserService {
-    Users addUser(Users user);
+    void addUser(Users user);
     void delete(Users user);
-    Users editUser(Users user);
+    void editUser(Users user);
     Users getById(int idUser);
     List<Users> getAllUsers();
 }

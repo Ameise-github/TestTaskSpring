@@ -5,15 +5,14 @@ import org.springframework.web.bind.annotation.*;
 import testSpring.model.Users;
 import org.springframework.web.servlet.ModelAndView;
 import testSpring.service.UserService;
-import testSpring.service.UsersServiceImpl;
 
 import java.util.List;
 
 @RestController
 public class UsersController {
-
     @Autowired
     private UserService userService;
+
 
     @GetMapping(value = "/")
     public ModelAndView allUsers(){
