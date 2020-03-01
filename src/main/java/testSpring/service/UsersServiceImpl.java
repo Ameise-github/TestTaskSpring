@@ -1,19 +1,22 @@
 package testSpring.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import testSpring.model.Users;
 import testSpring.repository.UserRepository;
-import testSpring.repository.UserRepositoryImpl;
 
 import java.util.List;
 
+
 @Service
 public class UsersServiceImpl implements UserService {
-    private UserRepository userRepository = new UserRepositoryImpl();
+    @Autowired
+    private UserRepository userRepository;
 
     @Override
-    public void save(Users user) {
-        userRepository.save(user);
+    public void addUser(Users user) {
+
     }
 
     @Override
@@ -23,15 +26,16 @@ public class UsersServiceImpl implements UserService {
 
     @Override
     public void editUser(Users user) {
-        userRepository.editUser(user);
+
     }
 
     @Override
     public Users getById(int idUser) {
-        return userRepository.getById(idUser);
+        return null;
     }
 
     @Override
+    @Transactional
     public List<Users> getAllUsers() {
         return userRepository.getAllUsers();
     }
