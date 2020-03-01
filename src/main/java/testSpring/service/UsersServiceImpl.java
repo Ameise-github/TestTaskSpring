@@ -15,23 +15,27 @@ public class UsersServiceImpl implements UserService {
     private UserRepository userRepository;
 
     @Override
+    @Transactional
     public void addUser(Users user) {
-
+        userRepository.addUser(user);
     }
 
     @Override
+    @Transactional
     public void delete(Users user) {
         userRepository.delete(user);
     }
 
     @Override
+    @Transactional
     public void editUser(Users user) {
-
+        userRepository.editUser(user);
     }
 
     @Override
+    @Transactional
     public Users getById(int idUser) {
-        return null;
+        return userRepository.getById(idUser);
     }
 
     @Override

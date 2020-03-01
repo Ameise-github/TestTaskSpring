@@ -33,13 +33,13 @@
         </c:if>
 
         <label for="login">Login</label>
-        <input type="text" name="login" id="login"><br>
+        <input type="text" name="login" id="login" value="${user.login}" style="margin-left: 50px;margin-bottom: 10px;"><br>
         <label  for="firstname">Firstname</label>
-        <input type="text" name="firstname" id="firstname"><br>
+        <input type="text" name="firstname" id="firstname" value="${user.firstname}" style="margin-left: 30px;margin-bottom: 10px;"><br>
         <label for="lastname">Lastname</label>
-        <input type="text" name="lastname" id="lastname"><br>
+        <input type="text" name="lastname" id="lastname" value="${user.lastname}" style="margin-left: 30px;margin-bottom: 10px;"><br>
         <label for="active">Active</label>
-        <input type="text" name="active" id="active"><br>
+        <input type="text" name="active" id="active" value="${user.active}" style="margin-left: 50px;margin-bottom: 10px;"><br>
         <c:if test="${empty user.login}">
             <input type="submit" value="Add new user">
         </c:if>
