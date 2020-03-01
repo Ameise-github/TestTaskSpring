@@ -44,24 +44,29 @@ public class UsersController {
 
     //region Add user
     @GetMapping(value = "/addUser")
-    public String addUserPage() {
-        return "userEdit";
+    public ModelAndView addUserPage() {
+//        return "userEdit";
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("userEdit");
+        return modelAndView;
     }
     @PostMapping(value = "/addUser")
-    public String addUser(@ModelAttribute("user") Users newUser) {
-//        ModelAndView modelAndView = new ModelAndView();
-//        modelAndView.setViewName("redirect:/");
+    public ModelAndView addUser(@ModelAttribute("user") Users newUser) {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("redirect:/");
         userService.addUser(newUser);
-        return "redirect:/";
+        return modelAndView;
     }
     //endregion
 
     //region Delete user
     @GetMapping(value = "/deleteUser/{idUser}")
-    public String deletUser(@PathVariable("idUser") int idUser){
+    public ModelAndView deletUser(@PathVariable("idUser") int idUser){
+        ModelAndView modelAndView = new ModelAndView();
         Users findUser = userService.getById(idUser);
         userService.delete(findUser);
-        return "redirect:/";
+        modelAndView.setViewName("redirect:/");
+        return modelAndView;
     }
     //endregion
 }

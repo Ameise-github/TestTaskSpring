@@ -10,6 +10,7 @@
 <html>
 <head>
     <title>usersList</title>
+    <link href="<c:url value="/res/style.css"/>" rel="stylesheet" type="text/css"/>
 </head>
 <body>
     <h2>Список пользователей:</h2>
@@ -22,6 +23,7 @@
             <th>firstname</th>
             <th>lastname</th>
             <th>active</th>
+            <th>change</th>
         </tr>
         <c:forEach var="user" items="${usersList}">
             <tr>
