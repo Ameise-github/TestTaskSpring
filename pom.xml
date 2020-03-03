@@ -25,9 +25,19 @@
                 <groupId>org.wildfly.plugins</groupId>
                 <artifactId>wildfly-maven-plugin</artifactId>
                 <version>2.0.2.Final</version>
+                <configuration>
+                    <force>true</force>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>deploy</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
-
-            <!--Возможность мобирать war пакеты без web.xml-->
+            <!--Чтоб можно было собрать без  web.xml -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
@@ -36,7 +46,6 @@
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
             </plugin>
-
         </plugins>
     </build>
 
@@ -73,7 +82,7 @@
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>42.2.10</version>
+            <version>42.0.0</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -93,7 +102,7 @@
         <!--            <version>${spring-framework.version}</version>-->
         <!--        </dependency> -->
 
-        <!--библиотека для протоколирования        -->
+        <!--библиотека для протоколирования-->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
