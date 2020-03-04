@@ -19,7 +19,7 @@ import java.util.Properties;
 @EnableTransactionManagement
 @PropertySource(value = "classpath:application.properties")
 public class HibernateConfig {
-    //ДЛя получение данных из properties файла
+    //Для получение данных из properties файла
     private Environment environment;
 
     @Autowired

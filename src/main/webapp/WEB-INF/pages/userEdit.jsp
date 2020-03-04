@@ -17,7 +17,8 @@
     </c:if>
 </head>
 <body>
-    <a href="/">Назад</a>
+    <c:url value="/usersList" var="userList"/>
+    <a href="${userList}">Назад</a>
     <c:if test="${empty user.login}">
         <h2>Добавление нового пользователя</h2>
         <c:url value="/addUser" var="myurl"/>

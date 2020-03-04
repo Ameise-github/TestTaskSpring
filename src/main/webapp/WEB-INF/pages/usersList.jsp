@@ -33,8 +33,10 @@
                 <td>${user.lastname}</td>
                 <td>${user.active}</td>
                 <td>
-                    <a href="/editUser/${user.idUser}">editUser</a>
-                    <a href="/deleteUser/${user.idUser}">deleteUser</a>
+                    <c:url value="/editUser/" var="editUser"/>
+                    <a href="${editUser}${user.idUser}">editUser</a>
+                    <c:url value="/deleteUser/" var="deleteUser"/>
+                    <a href="${deleteUser}${user.idUser}">deleteUser</a>
                 </td>
             </tr>
         </c:forEach>
