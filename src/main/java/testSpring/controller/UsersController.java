@@ -1,9 +1,12 @@
 package testSpring.controller;
+/*
+* @RequestBody - Объект Covert Json для java
+* @ResponseBody - преобразовать объект Java в json
+* */
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import testSpring.model.Users;
-import org.springframework.web.servlet.ModelAndView;
 import testSpring.service.UserService;
 
 import java.util.List;
@@ -15,64 +18,52 @@ public class UsersController {
     private UserService userService;
 
     @GetMapping(value = "/")
-    public ModelAndView startPages(){
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("index");
-        return modelAndView;
+    public String startPages(){
+        return "index";
     }
 
     @GetMapping(value = "/usersList")
-    public ModelAndView allUsers(){
-        List<Users> usersList = userService.getAllUsers();
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("usersList");
-        modelAndView.addObject("usersList", usersList);
-        return modelAndView;
+    public List<Users> allUsers(){
+        return userService.getAllUsers();
     }
 
     //region Edit User
     @GetMapping(value = "/editUser/{idUser}")
-    public ModelAndView editPageUser(@PathVariable("idUser") int idUser) {
-        Users findUser = userService.getById(idUser);
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("userEdit");
-        modelAndView.addObject("user", findUser);
-        return modelAndView;
+    public Users editPageUser(@PathVariable("idUser") int idUser) {
+        return userService.getById(idUser);
     }
 
-    @PostMapping(value = "/editUser")
-    public ModelAndView editUser(@ModelAttribute("user") Users editUser){
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("redirect:/usersList"); //перенаправление на главную страницу
+    @PutMapping(value = "/editUser")
+    public Users editUser(@RequestBody Users editUser){
         userService.editUser(editUser);
-        return modelAndView;
+        return userService.getById(editUser.getIdUser());
     }
     //endregion
 
     //region Add user
     @GetMapping(value = "/addUser")
-    public ModelAndView addUserPage() {
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("userEdit");
-        return modelAndView;
+    public String addUserPage() {
+        return "userEdit";
     }
     @PostMapping(value = "/addUser")
-    public ModelAndView addUser(@ModelAttribute("user") Users newUser) {
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("redirect:/usersList");
+    public Users addUser(@RequestBody Users newUser) {
         userService.addUser(newUser);
-        return modelAndView;
+        return userService.getById(newUser.getIdUser());
     }
     //endregion
 
     //region Delete user
-    @GetMapping(value = "/deleteUser/{idUser}")
-    public ModelAndView deletUser(@PathVariable("idUser") int idUser){
-        ModelAndView modelAndView = new ModelAndView();
+    @DeleteMapping(value = "/deleteUser/{idUser}")
+    public String deletUser(@PathVariable("idUser") int idUser){
+        String status;
         Users findUser = userService.getById(idUser);
-        userService.delete(findUser);
-        modelAndView.setViewName("redirect:/usersList");
-        return modelAndView;
+        try{
+            userService.delete(findUser);
+            status = "OK!";
+        }catch (Exception e){
+            status = "Error: " + e.getMessage();
+        }
+        return status;
     }
     //endregion
 }
